@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">ListView</string>
+
+
+    <string-array name="player_Name">
+
+        <item>Ramim</item>
+        <item>Rakib</item>
+        <item>Rahim</item>
+        <item>Shakib</item>
+        <item>Alice</item>
+        <item>Tamim</item>
+        <item>Riyad</item>
+        <item>Mushfiq</item>
+        <item>Imrul</item>
+        <item>Ramim</item>
+
+
+    </string-array>
+
+    <string-array name="player_details">
+        <item>Ramim is good boy</item>
+        <item>Rakib is good boy</item>
+        <item>Rahim is good boy</item>
+        <item>Shakib is good boy</item>
+        <item>Alice is good boy</item>
+        <item>Tamim is good boy</item>
+        <item>Riyad is good boy</item>
+        <item>Mushfiq is good boy</item>
+        <item>Imrul is good boy</item>
+        <item>Ramim is good boy</item>
+
+    </string-array>
 </resources>
