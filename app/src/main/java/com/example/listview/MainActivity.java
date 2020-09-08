@@ -12,35 +12,52 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    // Declaring variable
-    private ListView listView;
+              ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         listView = findViewById(R.id.listViewID);
-        final String [] playerInformation = getResources().getStringArray(R.array.player_Name);
-        final String[] playerdetails = getResources().getStringArray(R.array.player_details);
-        ArrayAdapter<String > adapter = new ArrayAdapter<>(MainActivity.this,R.layout.sample,R.id.textViewID,playerInformation);
-        listView.setAdapter(adapter);
+
+        String[] valuse = new String[]{
+
+                "FaceBook","Instagram", "Twitter", "YouTube",
+                "Tumblr","WhatsApp", "weChat","Telegram",
+                "Twitch","Github","SanpChat", "Viber",
+                "Android"
+        };
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,R.layout.simple_list_item,R.id.tex1, valuse);
+
+            listView.setAdapter(adapter);
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    if (i == 0){
+                        Intent intent = new Intent(view.getContext(),FaceBookActivity.class);
+                        startActivity(intent);
+                    }
+
+                    //for 2nd item click
+                    if (i == 1){
+                        Intent intent = new Intent(view.getContext(),InstragramActivity.class);
+                        startActivity(intent);
+                    }
+
+                    //for last item click
+                    if (i == 12){
+                        Intent intent = new Intent(view.getContext(),AndroidActivity.class);
+                        startActivity(intent);
+                    }
 
 
-        //setOn Item click Lisitner;
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-                //,,,useing put extra menu;
-                intent.putExtra("player name",playerInformation[i   ]);
-                intent.putExtra("playerdetails",playerdetails[i ]);
-                startActivity(intent);
-
-            }
-        });
+                }
+            });
 
     }
 }
